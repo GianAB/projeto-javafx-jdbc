@@ -50,7 +50,7 @@ public class DepartmentListController implements Initializable{
 		System.out.println("onBtNewAction");
 	}
 	
-	public void setDepartmentservice(DepartmentService service) {
+	public void setDepartmentService(DepartmentService service) {
 		this.service = service;
 	}
 	
@@ -81,7 +81,7 @@ public class DepartmentListController implements Initializable{
 	 *  carregar os departamentos;
 	 *  jogar os departamentos no atributo obsList.
 	 * */
-	public void updatetableView() {
+	public void updateTableView() {
 		//Este if será necessário somente pelo fato de não estarmos utilizando um framework 
 		if(service == null) {
 			throw new IllegalStateException("O service estava nulo!");
