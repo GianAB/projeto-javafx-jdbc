@@ -50,7 +50,7 @@ public class MainViewController implements Initializable {
 	@Override
 	public void initialize(URL uri, ResourceBundle rb) {
 
-	}
+	}	
 
 	// método reponsável por carregar uma tela
 	// Obs.: A palavra 'synchronized' serve para garantir que todo este

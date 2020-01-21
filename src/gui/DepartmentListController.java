@@ -58,7 +58,6 @@ public class DepartmentListController implements Initializable{
 	public void initialize(URL url, ResourceBundle rb) {
 		initializeNodes();
 		
-		
 	}
 
 	private void initializeNodes() {
@@ -71,9 +70,7 @@ public class DepartmentListController implements Initializable{
 		Stage stage = (Stage) Main.getMainScene().getWindow(); // Fazer um downCating
 		tableViewDepartment.prefHeightProperty().bind(stage.heightProperty());
 		
-		
 	}
-	
 	
 	/* Passo 1
 	 * Este método a baixo será responsável por:
