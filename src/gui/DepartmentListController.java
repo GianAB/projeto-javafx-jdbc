@@ -108,7 +108,7 @@ public class DepartmentListController implements Initializable{
 			DepartmentFormController controller = loader.getController();
 			controller.setDepartment(obj);
 			controller.updateFormData();
-			
+			controller.setDepartmentService(new DepartmentService());
 			
 			//Carregar janela para adicionar um novo departamento
 			Stage dialogStage = new Stage();
