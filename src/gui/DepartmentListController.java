@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import application.Main;
+import gui.Listeners.DataChangeListener;
 import gui.util.Alerts;
 import gui.util.Utils;
 import javafx.collections.FXCollections;
@@ -26,7 +27,7 @@ import javafx.stage.Stage;
 import model.entities.Departamento;
 import model.services.DepartmentService;
 
-public class DepartmentListController implements Initializable{
+public class DepartmentListController implements Initializable, DataChangeListener {
 
 	/*
 	 * Ao invés de instanciar um new Dep... e gerar um acoplamento forte 
@@ -109,6 +110,7 @@ public class DepartmentListController implements Initializable{
 			controller.setDepartment(obj);
 			controller.updateFormData();
 			controller.setDepartmentService(new DepartmentService());
+			controller.subscribeDataChangeListener(this);
 			
 			//Carregar janela para adicionar um novo departamento
 			Stage dialogStage = new Stage();
@@ -122,6 +124,11 @@ public class DepartmentListController implements Initializable{
 		} catch (IOException e) {
 			Alerts.showAlert("IOException", "Error loading view", e.getMessage(), AlertType.ERROR);
 		}
+	}
+
+	@Override
+	public void onDataChanged() {
+		updateTableView();
 	}
 	
 }
